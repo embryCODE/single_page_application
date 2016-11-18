@@ -29,8 +29,8 @@
       .then(successCallback, errorCallback);
     };
 
-    this.deleteRecipeById = function(successCallback, errorCallback) {
-      $http.delete('/api/recipes/{id}')
+    this.deleteRecipeById = function(selectedRecipeId, successCallback, errorCallback) {
+      $http.delete('/api/recipes/' + selectedRecipeId)
       .then(successCallback, errorCallback);
     };
 
