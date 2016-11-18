@@ -9,8 +9,8 @@
       .then(successCallback, errorCallback);
     };
 
-    this.getRecipesInCategory = function(successCallback, errorCallback) {
-      $http.get('/api/recipes?category={category}')
+    this.getRecipesInCategory = function(selectedCategory, successCallback, errorCallback) {
+      $http.get('/api/recipes?category=' + selectedCategory.name)
       .then(successCallback, errorCallback);
     };
 
