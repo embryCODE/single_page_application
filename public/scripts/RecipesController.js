@@ -34,14 +34,15 @@
 
     };
 
-    /**  */
-
     /** Deletes the selected recipe. Calls narrowByCategory to refresh display. */
     $scope.deleteRecipe = function(id) {
       dataService.deleteRecipeById(id, function() {
         $scope.narrowByCategory();
       });
     };
+
+    /** Go to the Recipe Detail screen to add a new recipe. */
+    
 
   });
 
