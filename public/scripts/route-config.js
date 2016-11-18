@@ -9,8 +9,6 @@
   // 2) The recipe edit route "/edit/:id" which serves up the "Recipe Detail" view.
   // 3) The recipe add route "/add" which also serves up the "Recipe Detail" view.
 
-  // TODO Uncomment this code after you've configured the `app` module.
-
   angular
     .module('app')
     .config(config);
