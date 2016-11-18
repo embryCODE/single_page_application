@@ -20,7 +20,7 @@
 
 <!-- TODO Add a directive to this div element so that it only displays
   when there are no recipes to display. -->
-<div class="grid-100 row">
+<div ng-hide="allRecipes" class="grid-100 row">
   <div class="grid-70">
     <p>No recipes found!</p>
   </div>
@@ -29,13 +29,14 @@
 <!-- TODO Add a directive to this div element so that it repeats
   for each recipe to display. Also, add a directive to this div element
   so that it only displays when there are recipes to display. -->
-<div class="grid-100 row addHover">
+<div ng-repeat="recipe in allRecipes" class="grid-100 row addHover">
   <!-- TODO Replace this anchor element's href attribute with a
     directive so that you can route the user to the Recipe Detail
     screen when they click on a row. -->
   <a href="#">
     <div class="grid-70">
       <p>
+        {{recipe.name}} ({{recipe.category}})
         <!-- TODO Add binding expressions here in order to
           display information about the recipe. -->
       </p>

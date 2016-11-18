@@ -3,8 +3,13 @@
   'use strict';
 
   angular.module('app')
+
   .controller('RecipesController', function($scope, dataService) {
-    $scope.message = 'This is hard.';
+
+    dataService.getAllRecipes(function(response) {
+      $scope.allRecipes = response.data;
+    });
+
   });
-  
+
 })();
