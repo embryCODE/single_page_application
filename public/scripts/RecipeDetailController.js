@@ -51,14 +51,14 @@
 
     $scope.saveRecipe = function() {
 
-      if (true) {
+      if ($location.path() === '/add') {
         dataService.addRecipe($scope.recipe, function() {
           $location.path('/');
         });
       } else {
-        // dataService.updateRecipeById($scope.recipe._id, $scope.recipe, function() {
-        //   $location.path('/');
-        // });
+        dataService.updateRecipeById($scope.recipe._id, $scope.recipe, function() {
+          $location.path('/');
+        });
       }
 
 
