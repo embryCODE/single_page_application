@@ -20,7 +20,7 @@
 </div>
 
 <div ng-repeat="recipe in recipesToDisplay" ng-show="recipesToDisplay.length > 0" class="grid-100 row addHover">
-  <a href="#/edit/{{recipe._id}}">
+  <a ng-href="#/edit/{{recipe._id}}">
     <div class="grid-70">
       <p>
         {{recipe.name}}
