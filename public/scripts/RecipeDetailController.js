@@ -52,30 +52,33 @@
     /** Saves a recipe, whether adding or updating. */
     $scope.saveRecipe = function() {
 
+      /** Adds a new recipe if on the /add path. */
       if ($location.path() === '/add') {
         dataService.addRecipe($scope.recipe, function() {
           $location.path('/');
         }, function(response) {
+          /** Creates an array containing each individual error message. */
           $scope.errors = response.data.errors;
           $scope.errorList = [];
           for (var errorItem in $scope.errors) {
             $scope.errorList.push($scope.errors[errorItem][0].userMessage);
           }
         });
+
+      /** Updates current recipe if not on the /add path. */
       } else {
         dataService.updateRecipeById($scope.recipe._id, $scope.recipe, function() {
           $location.path('/');
         }, function(response) {
+          /** Creates an array containing each individual error message. */
           $scope.errors = response.data.errors;
           $scope.errorList = [];
           for (var errorItem in $scope.errors) {
             $scope.errorList.push($scope.errors[errorItem][0].userMessage);
           }
         });
+
       }
-
     };
-
   });
-
 })();

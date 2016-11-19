@@ -45,7 +45,6 @@
     $scope.addRecipe = function() {
       $location.path('/add/');
     };
-
+    
   });
-
 })();
