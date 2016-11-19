@@ -5,7 +5,7 @@
   angular.module('app').service('dataService', function($http) {
 
     this.getAllRecipes = function(successCallback, errorCallback) {
-      $http.get('/api/recipes')
+      $http.get('/api/recipes/')
         .then(successCallback, errorCallback);
     };
 
@@ -35,12 +35,12 @@
     };
 
     this.getAllCategories = function(successCallback, errorCallback) {
-      $http.get('/api/categories')
+      $http.get('/api/categories/')
         .then(successCallback, errorCallback);
     };
 
     this.getAllFoodItems = function(successCallback, errorCallback) {
-      $http.get('/api/fooditems')
+      $http.get('/api/fooditems/')
         .then(successCallback, errorCallback);
     };
 
