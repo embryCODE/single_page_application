@@ -48,7 +48,7 @@
       $scope.recipe.steps.push({description: ''});
     };
 
-
+    /** Saves a recipe, whether adding or updating. */
     $scope.saveRecipe = function() {
 
       if ($location.path() === '/add') {
@@ -60,7 +60,6 @@
           $location.path('/');
         });
       }
-
 
     };
 
