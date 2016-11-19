@@ -54,10 +54,14 @@
       if ($location.path() === '/add') {
         dataService.addRecipe($scope.recipe, function() {
           $location.path('/');
+        }, function(response) {
+          
         });
       } else {
         dataService.updateRecipeById($scope.recipe._id, $scope.recipe, function() {
           $location.path('/');
+        }, function(response) {
+
         });
       }
 
