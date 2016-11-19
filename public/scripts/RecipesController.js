@@ -42,7 +42,9 @@
     };
 
     /** Go to the Recipe Detail screen to add a new recipe. */
-    
+    $scope.addRecipe = function() {
+      $location.path('/add/');
+    };
 
   });
 
