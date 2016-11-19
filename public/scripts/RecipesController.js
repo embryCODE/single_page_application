@@ -23,7 +23,7 @@
     $scope.narrowByCategory = function() {
 
       if ($scope.selectedCategory) {
-        dataService.getRecipesInCategory($scope.selectedCategory, function(response) {
+        dataService.getRecipesInCategory($scope.selectedCategory.name, function(response) {
           $scope.recipesToDisplay = response.data;
         });
       } else {

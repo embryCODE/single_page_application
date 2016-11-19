@@ -9,8 +9,6 @@
   </div>
   <div class="grid-70">
     <div class="flush-right">
-      <!-- TODO Add a directive to this button in order to handle
-        when the user clicks to add a new recipe. -->
       <button ng-click="addRecipe()">+ Add Recipe</button>
     </div>
   </div>
@@ -37,8 +35,6 @@
       <div class="flush-right">
         <p>
           <a href="#/edit/{{recipe._id}}"> <img src="images/edit.svg" height="12px"> Edit </a>
-          <!-- TODO Add a directive to this anchor element so that you can
-            delete the recipe when the user clicks on the 'Delete' link. -->
           <a ng-click="deleteRecipe(recipe._id)" class="no-action-link"> <img src="images/delete.svg" height="12px"> Delete </a>
         </p>
       </div>

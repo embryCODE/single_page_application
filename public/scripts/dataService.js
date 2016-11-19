@@ -9,18 +9,18 @@
       .then(successCallback, errorCallback);
     };
 
-    this.getRecipesInCategory = function(selectedCategory, successCallback, errorCallback) {
-      $http.get('/api/recipes?category=' + selectedCategory.name)
+    this.getRecipesInCategory = function(categoryName, successCallback, errorCallback) {
+      $http.get('/api/recipes?category=' + categoryName)
       .then(successCallback, errorCallback);
     };
 
-    this.getRecipeById = function(successCallback, errorCallback) {
-      $http.get('/api/recipes/{id}')
+    this.getRecipeById = function(id, successCallback, errorCallback) {
+      $http.get('/api/recipes/' + id)
       .then(successCallback, errorCallback);
     };
 
-    this.updateRecipeById = function(successCallback, errorCallback) {
-      $http.put('/api/recipes/{id}')
+    this.updateRecipeById = function(id, successCallback, errorCallback) {
+      $http.put('/api/recipes/' + id)
       .then(successCallback, errorCallback);
     };
 
