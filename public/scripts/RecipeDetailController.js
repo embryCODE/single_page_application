@@ -22,12 +22,13 @@
         $scope.recipe = response.data;
       });
     } else {
+      /** Otherwise, create a blank recipe. */
       $scope.recipe = {};
       $scope.recipe.ingredients = [];
       $scope.recipe.steps = [];
     }
 
-    /** Cancels and clears recipeData. */
+    /** Cancels and clears recipeData and redirects to recipes page. */
     $scope.cancel = function() {
       $scope.recipe = {};
       $location.path('/');
@@ -38,12 +39,12 @@
       array.splice(index, 1);
     };
 
-    /** Adds an item to the ingredient or steps list. */
+    /** Adds an item to the ingredient list. */
     $scope.addIngredient = function() {
       $scope.recipe.ingredients.push({item: '', condition: '', amount: ''});
     };
 
-    /** Adds an item to the ingredient or steps list. */
+    /** Adds an item to the steps list. */
     $scope.addStep = function() {
       $scope.recipe.steps.push({description: ''});
     };
@@ -55,13 +56,21 @@
         dataService.addRecipe($scope.recipe, function() {
           $location.path('/');
         }, function(response) {
-          
+          $scope.errors = response.data.errors;
+          $scope.errorList = [];
+          for (var errorItem in $scope.errors) {
+            $scope.errorList.push($scope.errors[errorItem][0].userMessage);
+          }
         });
       } else {
         dataService.updateRecipeById($scope.recipe._id, $scope.recipe, function() {
           $location.path('/');
         }, function(response) {
-
+          $scope.errors = response.data.errors;
+          $scope.errorList = [];
+          for (var errorItem in $scope.errors) {
+            $scope.errorList.push($scope.errors[errorItem][0].userMessage);
+          }
         });
       }
 
