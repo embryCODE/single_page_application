@@ -65,8 +65,8 @@
         }, errorCallback);
       }
 
+      /** Creates an array containing each individual error message. */
       function errorCallback(response) {
-        /** Creates an array containing each individual error message. */
         $scope.errors = response.data.errors;
         $scope.errorList = [];
         for (var errorItem in $scope.errors) {
